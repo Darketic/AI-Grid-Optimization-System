@@ -6,8 +6,8 @@ import {
 } from 'recharts';
 
 // ─── Constants ───────────────────────────────────────────────────────────────
-const WS_URL      = 'ws://localhost:8000/ws';
-const API_BASE    = 'http://localhost:8000/api/v1';
+const API_BASE    = import.meta.env.VITE_API_BASE || 'http://localhost:8000/api/v1';
+const WS_URL      = import.meta.env.VITE_WS_URL || 'ws://localhost:8000/ws';
 const MAX_POINTS  = 40;
 
 const REGIONS = [

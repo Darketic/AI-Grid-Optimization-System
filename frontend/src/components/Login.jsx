@@ -22,7 +22,11 @@ export default function Login({ onLogin }) {
       });
       onLogin(res.data.access_token);
     } catch (err) {
-      setError(err.response?.data?.detail || 'Invalid credentials. Please try again.');
+      if (!err.response) {
+        setError('Network Error: Could not connect to the backend. Please ensure the backend is deployed and VITE_API_BASE is set.');
+      } else {
+        setError(err.response?.data?.detail || 'Invalid credentials. Please try again.');
+      }
     } finally {
       setLoading(false);
     }

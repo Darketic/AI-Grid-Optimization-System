@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+pyjwt
+scikit-learn
+numpy
+pandas
+websockets
+python-dotenv
+python-multipart
+pydantic-settings

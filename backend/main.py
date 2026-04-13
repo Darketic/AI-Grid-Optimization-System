@@ -33,7 +33,7 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],          # Tighten to your domain in production
-    allow_credentials=True,
+    allow_credentials=False,      # Fix: Must be False when allow_origins=["*"] for Vercel/Fetch CORS
     allow_methods=["*"],
     allow_headers=["*"],
 )
